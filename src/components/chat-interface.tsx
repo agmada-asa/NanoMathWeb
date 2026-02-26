@@ -53,7 +53,7 @@ export default function ChatInterface() {
         setIsLoading(true);
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/chat";
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://agmadaasa-nanomath-api.hf.space/api/chat";
 
             const response = await fetch(apiUrl, {
                 method: "POST",
@@ -72,7 +72,7 @@ export default function ChatInterface() {
             const assistantMessage: Message = {
                 id: (Date.now() + 1).toString(),
                 role: "assistant",
-                content: data.reply || "No response received.",
+                content: data.response || data.reply || "No response received.",
             };
 
             setMessages([...newMessages, assistantMessage]);
@@ -81,7 +81,7 @@ export default function ChatInterface() {
             const errorMessage: Message = {
                 id: (Date.now() + 1).toString(),
                 role: "assistant",
-                content: `Sorry, there was an error connecting to the API. (Placeholder endpoint: ${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/chat"})`,
+                content: `Sorry, there was an error connecting to the API. (Placeholder endpoint: ${process.env.NEXT_PUBLIC_API_URL || "https://agmadaasa-nanomath-api.hf.space/api/chat"})`,
             };
             setMessages([...newMessages, errorMessage]);
         } finally {
