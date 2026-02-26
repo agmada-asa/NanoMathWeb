@@ -10,7 +10,7 @@ export default function Home() {
             NanoMath Web
           </h1>
           <p className="text-lg text-muted-foreground font-medium max-w-xl mx-auto dark:text-zinc-400">
-            A fast, direct interface to interact with the NanoMath language model.
+            Chat with NanoMath, your AI math assistant.
           </p>
         </header>
 

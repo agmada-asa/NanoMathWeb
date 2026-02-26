@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "NanoMath Web",
-  description: "A fast, direct interface to interact with the NanoMath language model",
+  description: "Chat with NanoMath, your AI math assistant.",
 };
 
 export default function RootLayout({
